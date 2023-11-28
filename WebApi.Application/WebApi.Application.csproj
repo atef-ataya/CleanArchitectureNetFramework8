@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Events\" />
-    <Folder Include="Features\Orders\" />
   </ItemGroup>
 
 </Project>
