@@ -12,7 +12,11 @@ namespace WebApi.Persistence
 {
     public class WebApiDbContext : DbContext
     {
+
         private readonly ILoggedInUserService _loggedInUserService;
+
+        //public WebApiDbContext() { }
+
 
         public WebApiDbContext(DbContextOptions<WebApiDbContext> options)
            : base(options)
@@ -246,6 +250,11 @@ namespace WebApi.Persistence
                         break;
                 }
             }
+            //if (_loggedInUserService != null)
+            //{
+                
+            //}
+
             return base.SaveChangesAsync(cancellationToken);
         }
     }

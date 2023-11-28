@@ -23,7 +23,7 @@ namespace WebApi.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<List<CategoryListVm>>> GetAllCategories()
         {
-            var dtos = await _mediator.Send(new GetCategoriesListQuery());
+            var dtos = await _mediator.Send(new GetCategoriesListQuery() { BypassCache = false });
             return Ok(dtos);
         }
 

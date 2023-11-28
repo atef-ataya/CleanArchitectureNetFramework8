@@ -37,6 +37,7 @@ using WebApi.Persistence;
 using WebApi.Identity.Seed;
 using Microsoft.OpenApi.Models;
 using WebApi.API.Utility;
+using WebApi.Application.Settings;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -53,6 +54,8 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 // Add services to the container (from ConfigureServices in Startup.cs)
+builder.Services.AddDistributedMemoryCache();
+builder.Services.Configure<CacheSettings>(builder.Configuration.GetSection("CacheSettings"));
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);
