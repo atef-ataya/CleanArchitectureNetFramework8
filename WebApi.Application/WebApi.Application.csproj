@@ -26,7 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Categories\Queries\GetCategoriesList\" />
     <Folder Include="Features\Categories\Queries\GetCategoriesListWithEvents\" />
     <Folder Include="Features\Events\" />
     <Folder Include="Features\Orders\" />
