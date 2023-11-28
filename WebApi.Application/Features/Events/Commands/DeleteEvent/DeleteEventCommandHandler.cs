@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi.Application.Contracts.Persistence;
 using WebApi.Application.Exceptions;
+using WebApi.Application.Features.Events.Commands.UpdateEvent;
 using WebApi.Domain.Entities;
 
 namespace WebApi.Application.Features.Events.Commands.DeleteEvent
@@ -22,7 +23,7 @@ namespace WebApi.Application.Features.Events.Commands.DeleteEvent
             _eventRepository = eventRepository;
         }
 
-        public async Task Handle(DeleteEventCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteEventCommand request, CancellationToken cancellationToken)
         {
             var eventToDelete = await _eventRepository.GetByIdAsync(request.EventId);
 
@@ -32,6 +33,8 @@ namespace WebApi.Application.Features.Events.Commands.DeleteEvent
             }
 
             await _eventRepository.DeleteAsync(eventToDelete);
+
+            return Unit.Value;
         }
     }
 

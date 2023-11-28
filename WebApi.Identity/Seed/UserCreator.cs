@@ -14,17 +14,17 @@ namespace WebApi.Identity.Seed
         {
             var applicationUser = new ApplicationUser
             {
-                FirstName = "John",
-                LastName = "Smith",
-                UserName = "johnsmith",
-                Email = "john@test.com",
+                FirstName = "Atef",
+                LastName = "Ataya",
+                UserName = "atef.ataya",
+                Email = "atef.ataya@gmail.com",
                 EmailConfirmed = true
             };
 
             var user = await userManager.FindByEmailAsync(applicationUser.Email);
             if (user == null)
             {
-                await userManager.CreateAsync(applicationUser, "Plural&01?");
+                await userManager.CreateAsync(applicationUser, "ATAYA&01?");
             }
         }
     }

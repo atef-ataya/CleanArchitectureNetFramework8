@@ -24,7 +24,7 @@ namespace WebApi.Identity
         {
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
-            services.AddDbContext<WebApiIdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("GloboTicketIdentityConnectionString"),
+            services.AddDbContext<WebApiIdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("WebApiIdentityConnectionString"),
                 b => b.MigrationsAssembly(typeof(WebApiIdentityDbContext).Assembly.FullName)));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()

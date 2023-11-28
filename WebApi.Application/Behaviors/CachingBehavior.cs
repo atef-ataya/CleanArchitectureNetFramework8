@@ -14,7 +14,8 @@ using Newtonsoft.Json;
 
 namespace WebApi.Application.Behaviors
 {
-    public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : ICacheableMediatrQuery
+    public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+        where TRequest : ICacheableMediatrQuery, IRequest<TResponse>
     {
         private readonly IDistributedCache _cache;
         private readonly ILogger _logger;
