@@ -30,4 +30,8 @@
     <ProjectReference Include="..\WebApi.Persistence\WebApi.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 </Project>
