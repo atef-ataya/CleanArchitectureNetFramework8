@@ -25,10 +25,4 @@
     <ProjectReference Include="..\WebApi.Domain\WebApi.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Events\Events\GetEventDetail\" />
-    <Folder Include="Features\Events\Events\GetEventsExport\" />
-    <Folder Include="Features\Events\Events\GetEventList\" />
-  </ItemGroup>
-
 </Project>
